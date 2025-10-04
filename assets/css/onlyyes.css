@@ -8,82 +8,87 @@ body {
 }
 
 .main-container {
-    padding: 40px;
-    background-color: #1e1e1e;
-    border-radius: 15px;
-    border: 1px solid #333;
+    padding: 50px;
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
     text-align: center;
     width: 90%;
-    max-width: 600px;
+    max-width: 650px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .question-container {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .question-text {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 1.5;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
 }
 
 .options-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .option-btn {
     border: none;
-    border-radius: 8px;
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    border-radius: 12px;
+    padding: 18px 50px;
+    font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
+    letter-spacing: 1px;
 }
 
 #yes {
-    background-color: #00bcd4;
-    color: #121212;
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--bg-primary);
+    box-shadow: 0 5px 20px rgba(0, 245, 195, 0.2);
 }
 
 #yes:hover {
-    background-color: #0097a7;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.2);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 245, 195, 0.3);
 }
 
 #no {
-    background-color: #333;
-    color: #ffffff;
+    background-color: var(--border-color);
+    color: #888;
+    border: 1px solid #444;
 }
 
 #no:hover {
-    background-color: #444;
-    transform: translateY(-3px);
+    background-color: #333;
+    color: #aaa;
+    transform: translateY(-5px);
 }
 
 .footer {
     position: absolute;
     bottom: 20px;
     color: #555;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 @media (max-width: 480px) {
     .question-text {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .option-btn {
-        padding: 12px 30px;
-        font-size: 1rem;
+        padding: 15px 35px;
+        font-size: 1.2rem;
     }
 
     .main-container {
-        padding: 30px;
+        padding: 40px;
     }
 }

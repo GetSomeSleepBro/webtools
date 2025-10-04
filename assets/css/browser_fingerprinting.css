@@ -12,69 +12,76 @@
 .table-wrapper {
     margin-bottom: 30px;
     overflow-x: auto;
+    background-color: var(--bg-secondary);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #1e1e1e;
 }
 
 .table th,
 .table td {
-    padding: 15px;
+    padding: 18px 25px;
     text-align: left;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .table th {
-    background-color: #333;
-    color: #00bcd4;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--text-primary);
+    width: 30%;
 }
 
 .table td {
-    color: #ffffff;
+    color: #b3b3b3;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+.table tr:last-child th,
 .table tr:last-child td {
     border-bottom: none;
 }
 
 .category-row {
-    background-color: #2a2a2a;
+    background-color: rgba(0, 245, 195, 0.05);
 }
 
 .category-cell {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #00bcd4;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    padding: 20px 25px;
+    text-transform: none;
 }
 
 .button-container {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
     padding-bottom: 20px;
 }
 
 .action-button {
-    background-color: #00bcd4;
-    color: #121212;
+    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--bg-primary);
     border: none;
-    border-radius: 8px;
-    padding: 12px 25px;
-    font-size: 1rem;
+    border-radius: 10px;
+    padding: 15px 35px;
+    font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(0, 245, 195, 0.2);
 }
 
 .action-button:hover {
-    background-color: #0097a7;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 245, 195, 0.3);
 }
 
 @media print {
@@ -82,16 +89,16 @@
         background-color: #ffffff;
         color: #000000;
     }
-
     .table th, .table td {
         color: #000000;
         border-color: #dddddd;
     }
-
+    .table {
+        background-color: #ffffff;
+    }
     .table th {
         background-color: #f2f2f2;
     }
-
     .button-container, .heading {
         display: none;
     }
