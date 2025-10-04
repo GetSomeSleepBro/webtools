@@ -1,91 +1,89 @@
-/* First fetch a bunch of subsets from Google */
-
-@import url('https://fonts.googleapis.com/css?family=Arbutus&text=ABCabc');
-@import url('https://fonts.googleapis.com/css?family=Rye&text=Dd');
-@import url('https://fonts.googleapis.com/css?family=Jolly+Lodger&text=EFef');
-@import url('https://fonts.googleapis.com/css?family=Henny+Penny&text=GHgh');
-@import url('https://fonts.googleapis.com/css?family=Pirata+One&text=Ii');
-@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&text=JKLjkl');
-@import url('https://fonts.googleapis.com/css?family=McLaren&text=MNmn');
-@import url('https://fonts.googleapis.com/css?family=Ribeye&text=Oo');
-@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC&text=PQpq');
-@import url('https://fonts.googleapis.com/css?family=New+Rocker&text=Rr');
-@import url('https://fonts.googleapis.com/css?family=Finger+Paint&text=STUstu');
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One&text=VWXvwx');
-@import url('https://fonts.googleapis.com/css?family=Sigmar+One&text=YZyz');
-@import url('https://fonts.googleapis.com/css?family=Nova+Cut&text=%21%22%24');
-@import url('https://fonts.googleapis.com/css?family=Miltonian&text=%26%2A%28%29');
-@import url('https://fonts.googleapis.com/css?family=Irish+Grover&text=%2D%2B');
-@import url('https://fonts.googleapis.com/css?family=Black+Ops+One&text=%40%3D%7E');
-@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans');
-
-/* The non-editable content font stack */
-
 body {
-    font-family: Arbutus, Rye, Henny Penny, Luckiest Guy, McLaren, Bowlby One SC, Finger Paint, Fredoka One, Sigmar One, Chewy, Nova Cut, Miltonian, Irish Grover, Black Ops One, Diplomata SC, Pirata One, Ribeye, New Rocker, Bubblegum Sans, Georgia, serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
+    overflow: hidden;
 }
-
-/* The rest is just generic stuff */
 
 .main-container {
-    max-width: 20em;
-    margin: 2em auto;
-    font-size: 3em;
-    word-spacing: 0.25em;
-    border: 2px solid;
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    border: 1px solid #333;
     text-align: center;
-    position: relative;
-    padding: 1em;
-    line-height: 1.125;
+    width: 90%;
+    max-width: 600px;
 }
 
-.main-container:focus {
-    border: 3px solid;
+.question-container {
+    margin-bottom: 40px;
 }
 
-.footer {
-    color: grey;
-    margin-top: auto;
-    padding: 20px;
-    font-size: 14px;
-    font-family: monospace, 'Courier New', Courier;
+.question-text {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.5;
 }
 
+.options-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
 .option-btn {
-    margin-top: 15%;
-    padding: 15px 30px;
-    color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 8px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 #yes {
-    background-color: #4CAF50;
-    position: absolute;
-    left: calc(50% - 160px); /* Adjust the left position to create space */
-}
-
-#no {
-    background-color: #e74c3c;
-    cursor: not-allowed;
-    position: absolute;
-    left: calc(50% + 60px); /* Adjust the left position to create space */
+    background-color: #00bcd4;
+    color: #121212;
 }
 
 #yes:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
+    background-color: #0097a7;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.2);
+}
+
+#no {
+    background-color: #333;
+    color: #ffffff;
 }
 
 #no:hover {
-    background-color: #c0392b;
+    background-color: #444;
+    transform: translateY(-3px);
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .question-text {
+        font-size: 1.5rem;
+    }
+
+    .option-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .main-container {
+        padding: 30px;
+    }
 }
