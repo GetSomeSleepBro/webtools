@@ -1,74 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[ Cryptography ]</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/cryptography.css">
 </head>
-
 <body>
-  <div class="container">
-    <h1 class="heading"><span class="initials">C</span>ryptography</h1>
-    <form id="cryptoForm">
-      <label for="inputText">Input:</label>
-      <div class="input-container">
+  <h1 class="heading"><span class="initials">C</span>ryptography</h1>
+  <form id="cryptoForm">
+    <div class="form-section">
+      <h2 class="section-title">Input</h2>
+      <div class="config-item">
+        <label for="inputText">Text to Encrypt/Decrypt:</label>
         <textarea id="inputText" placeholder="Enter your text here..."></textarea>
       </div>
+    </div>
 
-      <label for="inputSalt">Salt / Key:</label>
-      <div class="input-container">
+    <div class="form-section">
+      <h2 class="section-title">Configuration</h2>
+      <div class="config-item">
+        <label for="cryptoOption">Select an Algorithm:</label>
+        <select id="cryptoOption">
+          <option value="md5">MD5</option>
+          <option value="sha1">SHA-1</option>
+          <option value="sha256">SHA-256</option>
+          <option value="sha512">SHA-512</option>
+          <option value="zcrypt">Zcrypt</option>
+          <option value="rot">Custom ROT (default: 13)</option>
+          <option value="reverse">Reverse</option>
+          <option value="base64Encode">Base64 Encode</option>
+          <option value="base64Decode">Base64 Decode</option>
+          <option value="binaryEncode">Binary Encode</option>
+          <option value="binaryDecode">Binary Decode</option>
+          <option value="octalEncode">Octal Encode</option>
+          <option value="octalDecode">Octal Decode</option>
+          <option value="hexEncode">Hex Encode</option>
+          <option value="hexDecode">Hex Decode</option>
+          <option value="urlEncode">URL Encode</option>
+          <option value="urlDecode">URL Decode</option>
+          <option value="aesEncrypt">AES Encryption</option>
+          <option value="aesDecrypt">AES Decryption</option>
+        </select>
+      </div>
+      <div class="config-item">
+        <label for="inputSalt">Salt / Key (if applicable):</label>
         <textarea id="inputSalt" placeholder="Enter your salt/key here..."></textarea>
       </div>
+    </div>
 
-      <label for="cryptoOption">Select an Encryption:</label>
-      <select id="cryptoOption">
-        <option value="md5">MD5</option>
-        <option value="sha1">SHA-1</option>
-        <option value="sha256">SHA-256</option>
-        <option value="sha512">SHA-512</option>
-        <option value="zcrypt">Zcrypt</option>
-        <option value="rot">Custom ROT (default: 13)</option>
-        <option value="reverse">Reverse</option>
-        <option value="base64Encode">Base64 Encode</option>
-        <option value="base64Decode">Base64 Decode</option>
-        <option value="binaryEncode">Binary Encode</option>
-        <option value="binaryDecode">Binary Decode</option>
-        <option value="octalEncode">Octal Encode</option>
-        <option value="octalDecode">Octal Decode</option>
-        <option value="hexEncode">Hex Encode</option>
-        <option value="hexDecode">Hex Decode</option>
-        <option value="urlEncode">URL Encode</option>
-        <option value="urlDecode">URL Decode</option>
-        <option value="aesEncrypt">AES Encryption</option>
-        <option value="aesDecrypt">AES Decryption</option>
-      </select>
-
-      <label for="outputText">Output:</label>
-      <textarea id="outputText" placeholder="Output will appear here..." readonly></textarea>
-
-      <button type="button" id="copyButton">Copy</button>
-
-      <div class="toggle-container">
-        <input type="checkbox" class="checkbox" id="passwordToggle">
-        <label class="toggle" for="passwordToggle">
-          <div class="slider"></div>
-        </label>
+    <div class="form-section">
+      <h2 class="section-title">Output</h2>
+      <div class="output-container">
+        <textarea id="outputText" placeholder="Output will appear here..." readonly></textarea>
+        <button type="button" id="copyButton">Copy</button>
       </div>
-    </form>
-
-    <div id="popUpMessage">Copied!</div>
-  </div>
+    </div>
+  </form>
+  <div id="popUpMessage">Copied!</div>
 
   <script src="../assets/js/crypto-js.min.js"></script>
   <script src="../assets/js/aes.min.js"></script>
   <script src="../assets/js/zcrypt.js"></script>
   <script src="../assets/js/cryptography.js"></script>
 </body>
-
 </html>

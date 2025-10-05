@@ -43,41 +43,39 @@ document.addEventListener('DOMContentLoaded', function() {
   
   var containerElement = document.getElementById('fingerprintingContainer');
   
-  var tableElement = document.createElement('table');
-  tableElement.classList.add('table');
-  
+  var listElement = document.createElement('div');
+  listElement.classList.add('fingerprint-list');
+
   fingerprintingDetails.forEach(function (category) {
-    var categoryRow = document.createElement('tr');
-    categoryRow.classList.add('category-row');
-  
-    var categoryCell = document.createElement('td');
-    categoryCell.classList.add('category-cell');
-    categoryCell.textContent = category.category;
-    categoryCell.colSpan = 2;
-    categoryRow.appendChild(categoryCell);
-  
-    tableElement.appendChild(categoryRow);
-  
+    var categoryElement = document.createElement('div');
+    categoryElement.classList.add('fingerprint-category');
+
+    var categoryTitle = document.createElement('h2');
+    categoryTitle.classList.add('category-title');
+    categoryTitle.textContent = category.category;
+    categoryElement.appendChild(categoryTitle);
+
     category.items.forEach(function (detail) {
-      var row = document.createElement('tr');
-  
-      var labelCell = document.createElement('td');
-      labelCell.textContent = detail.label;
-      row.appendChild(labelCell);
-  
-      var valueCell = document.createElement('td');
-      valueCell.id = detail.id;
-      row.appendChild(valueCell);
-  
-      tableElement.appendChild(row);
+      var itemElement = document.createElement('div');
+      itemElement.classList.add('fingerprint-item');
+
+      var labelElement = document.createElement('div');
+      labelElement.classList.add('item-label');
+      labelElement.textContent = detail.label;
+      itemElement.appendChild(labelElement);
+
+      var valueElement = document.createElement('div');
+      valueElement.classList.add('item-value');
+      valueElement.id = detail.id;
+      itemElement.appendChild(valueElement);
+
+      categoryElement.appendChild(itemElement);
     });
+
+    listElement.appendChild(categoryElement);
   });
-  
-  var containerWrapper = document.createElement('div');
-  containerWrapper.classList.add('table-container');
-  containerWrapper.appendChild(tableElement);
-  
-  containerElement.appendChild(containerWrapper);
+
+  containerElement.appendChild(listElement);
   
 
   // Get the user agent

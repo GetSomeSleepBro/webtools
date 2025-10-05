@@ -1,94 +1,77 @@
+/* Inherits base styles from styles.css */
+
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+    justify-content: center; /* Override body justify-content for this page */
 }
 
 .main-container {
-    padding: 50px;
-    background-color: var(--bg-secondary);
-    border-radius: 20px;
+    background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
-    text-align: center;
-    width: 90%;
-    max-width: 650px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
 }
 
 .question-container {
-    margin-bottom: 50px;
+    width: 100%;
 }
 
 .question-text {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.4;
+    color: var(--text-color);
+    line-height: 1.5;
+    text-align: center;
 }
 
 .options-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 1.5rem;
 }
 
 .option-btn {
     border: none;
-    border-radius: 12px;
-    padding: 18px 50px;
-    font-size: 1.4rem;
-    font-weight: 700;
+    border-radius: 8px;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
 }
 
 #yes {
-    background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
-    color: var(--bg-primary);
-    box-shadow: 0 5px 20px rgba(0, 245, 195, 0.2);
-}
-
-#yes:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 245, 195, 0.3);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
 }
 
 #no {
     background-color: var(--border-color);
-    color: #888;
-    border: 1px solid #444;
-}
-
-#no:hover {
-    background-color: #333;
     color: #aaa;
-    transform: translateY(-5px);
 }
 
 .footer {
     position: absolute;
     bottom: 20px;
-    color: #555;
-    font-size: 1rem;
+    color: #666;
+    font-size: 0.9rem;
     font-family: 'Courier New', Courier, monospace;
 }
 
-@media (max-width: 480px) {
-    .question-text {
-        font-size: 1.8rem;
-    }
-
-    .option-btn {
-        padding: 15px 35px;
-        font-size: 1.2rem;
-    }
-
+@media (max-width: 768px) {
     .main-container {
-        padding: 40px;
+        padding: 2.5rem;
+    }
+    .question-text {
+        font-size: 1.5rem;
+    }
+    .option-btn {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
     }
 }
