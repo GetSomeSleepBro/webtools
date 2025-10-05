@@ -102,8 +102,38 @@ select:focus {
     gap: 0.8rem;
 }
 
+.toggle-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media (max-width: 768px) {
+    #cryptoForm {
+        gap: 1.5rem;
+    }
     .form-section {
         padding: 1.5rem;
+    }
+    .section-title {
+        font-size: 1.1rem;
+    }
+    label {
+        font-size: 0.95rem;
+    }
+    textarea, select {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section {
+        padding: 1.2rem;
+    }
+    .toggle-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
     }
 }
